@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_allNote"
+            android:icon="@drawable/ic_menu_note"
+            android:title="@string/menu_allNotes" />
+        <item
+            android:id="@+id/nav_recycleBin"
+            android:checkable="false"
+            android:icon="@drawable/ic_menu_delete"
+            android:tint="@android:color/white"
+            android:title="@string/menu_recycleBin" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_slideshow"
+            android:visible="true" />
+    </group>
+</menu>
