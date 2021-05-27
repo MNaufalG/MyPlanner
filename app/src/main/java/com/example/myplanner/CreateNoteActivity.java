@@ -20,6 +20,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.myplanner.ui.allNote.AllNoteFragment;
+
 public class CreateNoteActivity extends AppCompatActivity {
     public static final String EXTRA_TITLE = "com.example.myplanner.EXTRA_TITLE";
     public static final String EXTRA_DESC = "com.example.myplanner.EXTRA_DESC";
@@ -54,10 +56,10 @@ public class CreateNoteActivity extends AppCompatActivity {
             Toast.makeText(this,"Please Insert a Title and Description", Toast.LENGTH_SHORT).show();
             return;
         } else {
-            Toast.makeText(this,"title :" +title+ "desc :" +description+ "priority :" +priority, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"title : " +title+ " desc : " +description+ " priority : " +priority, Toast.LENGTH_SHORT).show();
         }
 
-        Intent data = new Intent(this,MainActivity.class);
+        Intent data = new Intent(this, MainActivity.class);
         data.putExtra(EXTRA_TITLE,title);
         data.putExtra(EXTRA_DESC,description);
         data.putExtra(EXTRA_PRIORITY,priority);

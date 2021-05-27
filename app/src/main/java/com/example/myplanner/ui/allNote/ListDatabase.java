@@ -9,7 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {ListItem.class}, version = 1)
+@Database(entities = {ListItem.class}, version = 1, exportSchema = false)
 public abstract class ListDatabase extends RoomDatabase {
 
     private static ListDatabase instance;
@@ -47,6 +47,7 @@ public abstract class ListDatabase extends RoomDatabase {
             listDao.insert(new ListItem("Title 1", "Description 1",1));
             listDao.insert(new ListItem("Title 2", "Description 2",2));
             listDao.insert(new ListItem("Title 3", "Description 3",3));
+            listDao.insert(new ListItem("Title 4", "Description 4",4));
             return null;
         }
     }

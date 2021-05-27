@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -51,16 +52,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-                Intent intent = new Intent(MainActivity.this, CreateNoteActivity.class);
-                startActivityForResult(intent, ADD_NOTE_REQUEST);
-            }
-        });
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+////                        .setAction("Action", null).show();
+//                Intent intent = new Intent(MainActivity.this, CreateNoteActivity.class);
+//                startActivityForResult(intent, ADD_NOTE_REQUEST);
+//            }
+//        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -108,5 +109,24 @@ public class MainActivity extends AppCompatActivity {
             imageUri = data.getData();
             imageView.setImageURI(imageUri);
         }
+
+//        Log.d("TEST", "test");
+//
+//        if (requestCode == ADD_NOTE_REQUEST && resultCode == RESULT_OK) {
+//            String title = data.getStringExtra(CreateNoteActivity.EXTRA_TITLE);
+//            String description = data.getStringExtra(CreateNoteActivity.EXTRA_DESC);
+//            int priority = data.getIntExtra(CreateNoteActivity.EXTRA_PRIORITY, 1);
+//
+//            Log.d("TEST", title);
+//            Log.d("TEST", description);
+//            Log.d("TEST", String.valueOf(priority));
+//
+//            ListItem listItem = new ListItem(title,description,priority);
+//            allNoteViewModel.insert(listItem);
+//
+//            Toast.makeText(this,"Note Saved",Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(this,"Note Not Saved",Toast.LENGTH_SHORT).show();
+//        }
     }
 }
